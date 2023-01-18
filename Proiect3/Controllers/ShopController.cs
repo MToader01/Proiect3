@@ -97,6 +97,11 @@ namespace Proiect3.Controllers
         [HttpPost]
         public ActionResult Buy(ProductModel product)
         {
+<<<<<<< Updated upstream
+=======
+            dbCtx.Products.AddOrUpdate(product);
+            dbCtx.SaveChanges();
+>>>>>>> Stashed changes
 
             return RedirectToAction("Index");
         }
