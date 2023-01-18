@@ -83,12 +83,21 @@ namespace Proiect3.Controllers
             return RedirectToAction("Index");
         }
 
+        ProductModel newProduct = new ProductModel();
         [HttpGet]
         public ActionResult Buy(int? id)
         {
             if (id != null)
             {
                 ProductModel product = dbCtx.Products.Find(id);
+
+                newProduct.Name = product.Name;
+                newProduct.Description = product.Description;
+                newProduct.ExpirationDate = product.ExpirationDate;
+                newProduct.AddedDate = product.AddedDate;
+                newProduct.Id = product.Id;
+                newProduct.Quantity = product.Quantity;
+
                 return View(product);
             }
             else return RedirectToAction("Index");
@@ -97,11 +106,8 @@ namespace Proiect3.Controllers
         [HttpPost]
         public ActionResult Buy(ProductModel product)
         {
-<<<<<<< Updated upstream
-=======
-            dbCtx.Products.AddOrUpdate(product);
-            dbCtx.SaveChanges();
->>>>>>> Stashed changes
+            newProduct.Quantity = product.Quantity;
+            Cart.addToCart(newProduct);
 
             return RedirectToAction("Index");
         }

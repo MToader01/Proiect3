@@ -14,7 +14,8 @@ namespace Proiect3.Controllers
     {
         public ActionResult Login() 
         {
-            Trace.WriteLine("Login Page deschis");
+            Trace.WriteLine("Lo" +
+                "gin Page deschis");
             return RedirectToAction("Login", "Account");
         }
         public ActionResult Index()
@@ -42,5 +43,6 @@ namespace Proiect3.Controllers
             return RedirectToAction("Index", "Home",
                 new { language = lang });
         }
+
     }
 }
