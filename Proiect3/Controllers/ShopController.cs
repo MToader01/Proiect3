@@ -11,8 +11,6 @@ namespace Proiect3.Controllers
     public class ShopController : Controller
     {
         ProductModelDbContext dbCtx = new ProductModelDbContext();
-
-        List<ProductModel> cart = new List<ProductModel>();
         public ActionResult Index()
         {
             return View(dbCtx.Products.ToList());
@@ -58,7 +56,7 @@ namespace Proiect3.Controllers
 
         [HttpPost]
         public ActionResult Edit(ProductModel product)
-        {   
+        {
             dbCtx.Products.AddOrUpdate(product);
             dbCtx.SaveChanges();
 
@@ -85,10 +83,22 @@ namespace Proiect3.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult Buy()
+        [HttpGet]
+        public ActionResult Buy(int? id)
         {
-           
-            return RedirectToAction("Index", "Home");
+            if (id != null)
+            {
+                ProductModel product = dbCtx.Products.Find(id);
+                return View(product);
+            }
+            else return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public ActionResult Buy(ProductModel product)
+        {
+
+            return RedirectToAction("Index");
         }
     }
 }
