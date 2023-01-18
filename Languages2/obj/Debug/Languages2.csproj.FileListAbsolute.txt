@@ -31,3 +31,14 @@ C:\Users\pasti\Desktop\Proiect3\Languages2\obj\Debug\Languages2.csproj.CoreCompi
 C:\Users\pasti\Desktop\Proiect3\Languages2\obj\Debug\ro\Languages2.resources.dll
 C:\Users\pasti\Desktop\Proiect3\Languages2\obj\Debug\Languages2.dll
 C:\Users\pasti\Desktop\Proiect3\Languages2\obj\Debug\Languages2.pdb
+C:\Users\aleee\Desktop\Facultate\Proiect3\Languages2\bin\Debug\Languages2.dll
+C:\Users\aleee\Desktop\Facultate\Proiect3\Languages2\bin\Debug\Languages2.pdb
+C:\Users\aleee\Desktop\Facultate\Proiect3\Languages2\bin\Debug\ro\Languages2.resources.dll
+C:\Users\aleee\Desktop\Facultate\Proiect3\Languages2\obj\Debug\Languages2.csproj.AssemblyReference.cache
+C:\Users\aleee\Desktop\Facultate\Proiect3\Languages2\obj\Debug\Languages2.Resource.resources
+C:\Users\aleee\Desktop\Facultate\Proiect3\Languages2\obj\Debug\Languages2.Resource.ro.resources
+C:\Users\aleee\Desktop\Facultate\Proiect3\Languages2\obj\Debug\Languages2.csproj.GenerateResource.cache
+C:\Users\aleee\Desktop\Facultate\Proiect3\Languages2\obj\Debug\Languages2.csproj.CoreCompileInputs.cache
+C:\Users\aleee\Desktop\Facultate\Proiect3\Languages2\obj\Debug\ro\Languages2.resources.dll
+C:\Users\aleee\Desktop\Facultate\Proiect3\Languages2\obj\Debug\Languages2.dll
+C:\Users\aleee\Desktop\Facultate\Proiect3\Languages2\obj\Debug\Languages2.pdb
