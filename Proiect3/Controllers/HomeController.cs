@@ -28,7 +28,7 @@ namespace Proiect3.Controllers
 
             return View();
         }
-        int x;
+
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";

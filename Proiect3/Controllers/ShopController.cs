@@ -11,6 +11,8 @@ namespace Proiect3.Controllers
     public class ShopController : Controller
     {
         ProductModelDbContext dbCtx = new ProductModelDbContext();
+
+        List<ProductModel> cart = new List<ProductModel>();
         public ActionResult Index()
         {
             return View(dbCtx.Products.ToList());
@@ -64,7 +66,7 @@ namespace Proiect3.Controllers
         }
 
         [HttpGet]
-        public ActionResult Delete(int id)
+        public ActionResult Delete(int? id)
         {
             if (id != null)
             {
@@ -81,6 +83,12 @@ namespace Proiect3.Controllers
             dbCtx.SaveChanges();
 
             return RedirectToAction("Index");
+        }
+
+        public ActionResult Buy()
+        {
+           
+            return RedirectToAction("Index", "Home");
         }
     }
 }
