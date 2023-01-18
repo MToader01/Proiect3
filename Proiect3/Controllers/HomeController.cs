@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
 using System.Diagnostics;
+using Microsoft.Ajax.Utilities;
 
 namespace Proiect3.Controllers
 {
@@ -27,7 +28,7 @@ namespace Proiect3.Controllers
 
             return View();
         }
-
+        int x;
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
