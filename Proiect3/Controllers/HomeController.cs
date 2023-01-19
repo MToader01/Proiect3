@@ -14,8 +14,7 @@ namespace Proiect3.Controllers
     {
         public ActionResult Login() 
         {
-            Trace.WriteLine("Lo" +
-                "gin Page deschis");
+            Trace.WriteLine("Login Page deschis");
             return RedirectToAction("Login", "Account");
         }
         public ActionResult Index()

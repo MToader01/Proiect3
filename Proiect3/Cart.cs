@@ -1,6 +1,7 @@
 ﻿using Proiect3.Models;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 
@@ -8,6 +9,8 @@ namespace Proiect3
 {
     public class Cart
     {
+        public static ProductModel newProduct = new ProductModel();
+
         public static List<ProductModel> cart = new List<ProductModel>();
 
         public static void resetCart()
@@ -15,9 +18,10 @@ namespace Proiect3
             cart.Clear();
         }
 
-        public static void addToCart(ProductModel product)
+        public static void addToCart()
         {
-            cart.Add(product);
+            cart.Add(newProduct);
+            newProduct = new ProductModel();
         }
     }
 }

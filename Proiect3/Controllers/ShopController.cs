@@ -5,6 +5,9 @@ using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Diagnostics;
+using System.Drawing.Drawing2D;
+using System.Web.UI;
 
 namespace Proiect3.Controllers
 {
@@ -83,31 +86,61 @@ namespace Proiect3.Controllers
             return RedirectToAction("Index");
         }
 
-        ProductModel newProduct = new ProductModel();
         [HttpGet]
         public ActionResult Buy(int? id)
         {
             if (id != null)
             {
-                ProductModel product = dbCtx.Products.Find(id);
+                var rez = from s in dbCtx.Products
+                          where s.Id == id
+                          select new
+                          {
+                              s.Name,
+                              s.Description,
+                              s.Quantity,
+                              s.AddedDate,
+                              s.ExpirationDate
+                          };
 
-                newProduct.Name = product.Name;
-                newProduct.Description = product.Description;
-                newProduct.ExpirationDate = product.ExpirationDate;
-                newProduct.AddedDate = product.AddedDate;
-                newProduct.Id = product.Id;
-                newProduct.Quantity = product.Quantity;
-
-                return View(product);
+                if (rez.Count() == 1)
+                {
+                    Cart.newProduct.Name = rez.First().Name;
+                    Cart.newProduct.Quantity = rez.First().Quantity;
+                    Cart.newProduct.Description = rez.First().Description;
+                    Cart.newProduct.ExpirationDate = rez.First().ExpirationDate;
+                    Cart.newProduct.AddedDate = rez.First().AddedDate;
+                }
+                Trace.WriteLine(Cart.newProduct.Name);
+                return View(Cart.newProduct);
             }
             else return RedirectToAction("Index");
         }
-
-        [HttpPost]
-        public ActionResult Buy(ProductModel product)
+                                                                                  
+        [HttpPost]                                                                
+        public ActionResult Buy(ProductModel product, int? id)                             
         {
-            newProduct.Quantity = product.Quantity;
-            Cart.addToCart(newProduct);
+            ProductModel p = dbCtx.Products.Find(id);
+
+            if (product.Quantity > p.Quantity)
+            {
+                return View(Cart.newProduct);
+            }
+            else
+            {
+                Cart.newProduct.Quantity = product.Quantity;
+                Cart.addToCart();
+
+                p.Quantity -= product.Quantity;
+                if(p.Quantity == 0) 
+                {
+                    dbCtx.Entry(dbCtx.Products.Find(id)).State = System.Data.Entity.EntityState.Deleted;
+                }
+                else
+                {
+                    dbCtx.Entry(dbCtx.Products.Find(id)).State = System.Data.Entity.EntityState.Modified;
+                }
+                dbCtx.SaveChanges();
+            }
 
             return RedirectToAction("Index");
         }
