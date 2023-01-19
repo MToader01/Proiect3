@@ -36,10 +36,13 @@ namespace Proiect3.Controllers
 
             return View();
         }
+        
         public ActionResult ChangeLanguage(string lang)
         {
+            TraceHandler.write("Language Changed To "  + lang);
+
             Session["lang"] = lang;
-            TraceHandler.write("Language Changed");
+            
             return RedirectToAction("Index", "Home",
                 new { language = lang });
         }

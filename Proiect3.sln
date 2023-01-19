@@ -5,7 +5,7 @@ VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Proiect3", "Proiect3\Proiect3.csproj", "{8C71320E-6308-404C-BED9-F25F0B663756}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Languages2", "Languages2\Languages2.csproj", "{ACD4B50B-0340-4CD4-A5A5-6BAA1D717E2D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Languages2", "Languages\Languages2.csproj", "{ACD4B50B-0340-4CD4-A5A5-6BAA1D717E2D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
