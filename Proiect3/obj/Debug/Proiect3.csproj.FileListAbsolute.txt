@@ -253,3 +253,4 @@ C:\Users\pasti\Desktop\Proiect3\Proiect3\obj\Debug\Proiect3.pdb
 C:\Users\aleee\Desktop\Facultate\Proiect3\Proiect3\bin\Languages2.dll
 C:\Users\aleee\Desktop\Facultate\Proiect3\Proiect3\bin\Languages2.pdb
 C:\Users\aleee\Desktop\Facultate\Proiect3\Proiect3\bin\ro\Languages2.resources.dll
+C:\Users\pasti\Desktop\Proiect3\Proiect3\bin\de\Languages2.resources.dll

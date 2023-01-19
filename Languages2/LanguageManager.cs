@@ -20,8 +20,13 @@ namespace Languages2
 
                 new Languages
                 {
-                    LanguageName = "Romana",
+                    LanguageName = "/Romana",
                     LanguageCultureName = "ro"
+                },
+                new Languages
+                {
+                    LanguageName = "/Deutsch",
+                    LanguageCultureName = "de"
                 }
             };
         public static bool IsLanguageAvailable(string lang)
