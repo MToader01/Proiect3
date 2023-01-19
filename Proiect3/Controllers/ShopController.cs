@@ -13,15 +13,17 @@ namespace Proiect3.Controllers
 {
     public class ShopController : Controller
     {
-        ProductModelDbContext dbCtx = new ProductModelDbContext();
+        public ProductModelDbContext dbCtx = new ProductModelDbContext();
         public ActionResult Index()
         {
+            TraceHandler.write("Shop Index View Called");
             return View(dbCtx.Products.ToList());
         }
 
         [HttpGet]
         public ActionResult Create()
         {
+            TraceHandler.write("Create View Called");
             ProductModel product = new ProductModel();
             return View(product);
         }
@@ -29,6 +31,7 @@ namespace Proiect3.Controllers
         [HttpPost]
         public ActionResult Create(ProductModel product)
         {
+            TraceHandler.write("Added New Item");
             dbCtx.Products.Add(product);
             dbCtx.SaveChanges();
 
@@ -38,6 +41,7 @@ namespace Proiect3.Controllers
         [HttpGet]
         public ActionResult Details(int? id)
         {
+            TraceHandler.write("Details View Called");
             if (id != null)
             {
                 ProductModel product = dbCtx.Products.Find(id);
@@ -49,6 +53,7 @@ namespace Proiect3.Controllers
         [HttpGet]
         public ActionResult Edit(int? id)
         {
+            TraceHandler.write("Edit View Called");
             if (id != null)
             {
                 ProductModel product = dbCtx.Products.Find(id);
@@ -60,6 +65,7 @@ namespace Proiect3.Controllers
         [HttpPost]
         public ActionResult Edit(ProductModel product)
         {
+            TraceHandler.write("Product edited");
             dbCtx.Products.AddOrUpdate(product);
             dbCtx.SaveChanges();
 
@@ -69,6 +75,7 @@ namespace Proiect3.Controllers
         [HttpGet]
         public ActionResult Delete(int? id)
         {
+            TraceHandler.write("Delete View Called");
             if (id != null)
             {
                 ProductModel product = dbCtx.Products.Find(id);
@@ -80,6 +87,7 @@ namespace Proiect3.Controllers
         [HttpPost]
         public ActionResult Delete(ProductModel product)
         {
+            TraceHandler.write("Product Deleted");
             dbCtx.Entry(product).State = System.Data.Entity.EntityState.Deleted;
             dbCtx.SaveChanges();
 
@@ -119,6 +127,8 @@ namespace Proiect3.Controllers
         [HttpPost]                                                                
         public ActionResult Buy(ProductModel product, int? id)                             
         {
+            Cart.dbCtx = dbCtx;
+
             ProductModel p = dbCtx.Products.Find(id);
 
             if (product.Quantity > p.Quantity)
@@ -139,7 +149,6 @@ namespace Proiect3.Controllers
                 {
                     dbCtx.Entry(dbCtx.Products.Find(id)).State = System.Data.Entity.EntityState.Modified;
                 }
-                dbCtx.SaveChanges();
             }
 
             return RedirectToAction("Index");

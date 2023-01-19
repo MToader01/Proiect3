@@ -11,7 +11,17 @@ namespace Proiect3.Controllers
     {
         public ActionResult Index()
         {
+            TraceHandler.write("Cart Index View Called");
             return View(Cart.cart);
+        }
+
+        public ActionResult Delete()
+        {
+            TraceHandler.write("Cart buyed");
+            Cart.resetCart();
+            Cart.dbCtx.SaveChanges();
+
+            return RedirectToAction("Index", "Shop");
         }
     }
 }

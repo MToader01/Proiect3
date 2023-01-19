@@ -3,6 +3,12 @@
 @{
     ViewBag.Title = "Add To Cart";
 }
+<style>
+    body {
+        background-image: url(../../Resurse/background.jpg);
+        background-size: cover;
+    }
+</style>
 
 <h2>Add To Cart</h2>
 
@@ -10,7 +16,6 @@
 {
     @Html.AntiForgeryToken()
     <div>
-        <h4>ProductModel</h4>
         <hr />
         <dl class="dl-horizontal">
             <dt>
@@ -54,6 +59,6 @@
 
         </dl>
     </div>
-}   
+}
 
 

@@ -1,0 +1,15 @@
+1/19/2023 12:51:41 PM || Details View Called
+1/19/2023 12:51:41 PM || Shop Index View Called
+1/19/2023 12:51:47 PM || Details View Called
+1/19/2023 12:51:53 PM || Shop Index View Called
+1/19/2023 12:51:55 PM || Language Changed
+1/19/2023 12:51:55 PM || Home Index View Called
+1/19/2023 12:51:56 PM || Shop Index View Called
+1/19/2023 12:51:58 PM || Language Changed
+1/19/2023 12:51:58 PM || Home Index View Called
+ PM || Details View Called
+1/19/2023 12:51:03 PM || Shop Index View Called
+2:40:32 PM || Cart Index View Called
+1/19/2023 12:40:35 PM || Cart buyed
+1/19/2023 12:40:35 PM || Shop Index View Called
+1/19/2023 12:40:37 PM || Cart Index View Called

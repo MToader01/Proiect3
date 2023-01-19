@@ -19,26 +19,27 @@ namespace Proiect3.Controllers
         }
         public ActionResult Index()
         {
+            
+            if (TraceHandler.isActive == false)
+            {
+                TraceHandler.Initialization();
+            }
+
+            TraceHandler.write("Home Index View Called");
             return View();
         }
 
         public ActionResult About()
         {
+            TraceHandler.write("About View Called");
             ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
 
             return View();
         }
         public ActionResult ChangeLanguage(string lang)
         {
             Session["lang"] = lang;
-
+            TraceHandler.write("Language Changed");
             return RedirectToAction("Index", "Home",
                 new { language = lang });
         }

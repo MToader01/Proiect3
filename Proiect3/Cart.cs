@@ -9,6 +9,7 @@ namespace Proiect3
 {
     public class Cart
     {
+        public static ProductModelDbContext dbCtx = new ProductModelDbContext();
         public static ProductModel newProduct = new ProductModel();
 
         public static List<ProductModel> cart = new List<ProductModel>();
@@ -22,6 +23,11 @@ namespace Proiect3
         {
             cart.Add(newProduct);
             newProduct = new ProductModel();
+        }
+
+        public static void removeFromCart(ProductModel product)
+        {
+            cart.Remove(product);
         }
     }
 }

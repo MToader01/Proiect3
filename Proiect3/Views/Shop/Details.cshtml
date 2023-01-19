@@ -4,10 +4,17 @@
     ViewBag.Title = "Details";
 }
 
+<style>
+    body {
+        background-image: url(../../Resurse/background.jpg);
+        background-size: cover;
+    }
+</style>
+
+
 <h2>Details</h2>
 
 <div>
-    <h4>ProductModel</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -53,6 +60,8 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+    @if (LoginState.isAdmin == true) {
+        <p>@Html.ActionLink("Edit", "Edit", new { id = Model.Id })  |</p>
+    }
+   @Html.ActionLink("Back to List", "Index")
 </p>
